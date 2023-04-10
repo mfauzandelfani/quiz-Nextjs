@@ -2,6 +2,15 @@ import axios from "axios";
 import { domain } from "../../config/config";
 import { getCookie } from "cookies-next";
 
+const GetData = async () => {
+  try {
+    const result = await axios.get("http://localhost:3002/auth");
+    return result.data;
+  } catch (error) {
+    return error;
+  }
+};
+
 const signup = async (params: any) => {
   try {
     const result = await axios.post(`${domain}/auth/signup`, params);
@@ -36,4 +45,5 @@ export default {
   signup,
   signin,
   profile,
+  GetData,
 };

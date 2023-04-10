@@ -5,6 +5,9 @@ import {
   UserSigninFailed,
   UserSigninSuccess,
   UserSignoutSuccess,
+  GetUserSuccess,
+  GetUserFailed
+  
 } from "../action/userAction";
 
 function* handleSignin(action: any): any {
@@ -46,4 +49,13 @@ function* handleSignout() {
   }
 }
 
-export { handleSignin, handleSignup, handleSignout };
+function* handleGetUser(): any {
+  try {
+    const result = yield call(User.GetData);
+    yield put(GetUserSuccess(result));
+  } catch (error) {
+    yield put(GetUserFailed(error));
+  }
+}
+
+export { handleSignin, handleSignup, handleSignout, handleGetUser };

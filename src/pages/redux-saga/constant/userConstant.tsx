@@ -9,3 +9,7 @@ export const USER_SIGNUP_FAILED = "user/signup/failed";
 export const USER_SIGNOUT_REQUEST = "user/signout/request";
 export const USER_SIGNOUT_SUCCESS = "user/signout/success";
 export const USER_SIGNOUT_FAILED = "user/signout/failed";
+
+export const GET_USER_REQUEST = "get/user/request";
+export const GET_USER_SUCCESS = "get/user/success";
+export const GET_USER_FAILED = "get/user/failed";

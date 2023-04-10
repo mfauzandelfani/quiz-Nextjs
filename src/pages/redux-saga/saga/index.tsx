@@ -10,7 +10,7 @@ import { handleGetCategory } from "./CategorySaga";
 import { handleGetProduct } from "./ProductSaga";
 import { handleGetOrder } from "./OrderSaga";
 import {handleGetDetail} from "./DetailSaga"
-import { handleSignin, handleSignup, handleSignout } from "./UserSaga";
+import { handleSignin, handleSignup, handleSignout, handleGetUser } from "./UserSaga";
 
 function* watchAll() {
   yield all([takeEvery(ActionTypeCustomer.GET_CUSTOMER_REQUEST, handleGetCustomer)]);
@@ -23,6 +23,7 @@ function* watchAll() {
        takeEvery(ActionTypeUser.USER_SIGNIN_REQUEST, handleSignin),
        takeEvery(ActionTypeUser.USER_SIGNUP_REQUEST, handleSignup),
        takeEvery(ActionTypeUser.USER_SIGNOUT_REQUEST, handleSignout),
+       takeEvery(ActionTypeUser.GET_USER_REQUEST, handleGetUser),
      ]);
 }
 

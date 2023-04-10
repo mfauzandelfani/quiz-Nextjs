@@ -16,6 +16,10 @@ const INIT_STATE = {
   userSignup: null,
 };
 
+const init_state = {
+  user: [],
+};
+
 const UserReducer = (state = INIT_STATE, action: any) => {
   switch (action.type) {
     case ActionType.USER_SIGNIN_REQUEST:
@@ -30,6 +34,10 @@ const UserReducer = (state = INIT_STATE, action: any) => {
       return state;
     case ActionType.USER_SIGNOUT_SUCCESS:
       return UserSignout(state, action);
+    case ActionType.GET_USER_REQUEST:
+      return { ...state };
+    case ActionType.GET_USER_SUCCESS:
+      return GetUser(state, action);
 
     default:
       return state;
@@ -55,6 +63,13 @@ const UserSignup = (state: any, action: any) => {
   return {
     ...state,
     userSignup: action.payload,
+  };
+};
+
+const GetUser = (state: any, action: any) => {
+  return {
+    ...state,
+    user: action.payload,
   };
 };
 

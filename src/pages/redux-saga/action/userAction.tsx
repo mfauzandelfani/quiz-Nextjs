@@ -46,3 +46,17 @@ export const UserSignoutFailed = (payload: any) => ({
   type: ActionType.USER_SIGNOUT_FAILED,
   payload,
 });
+
+export const GetUserRequest = () => ({
+  type: ActionType.GET_USER_REQUEST,
+});
+
+export const GetUserSuccess = (payload: any) => ({
+  type: ActionType.GET_USER_SUCCESS,
+  payload,
+});
+
+export const GetUserFailed = (payload: any) => ({
+  type: ActionType.GET_USER_FAILED,
+  payload,
+});
